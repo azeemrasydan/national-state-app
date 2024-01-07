@@ -1,0 +1,26 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+    <div *ngFor="let warning of floodWarnings" class="border p-4 rounded-md shadow-md">
+        <h3 class="text-lg font-semibold mb-2">{{ warning.station_name }}</h3>
+        <p class="text-gray-600">{{ warning.district }}, {{ warning.state }}</p>
+
+        <div class="mt-4">
+            <p class="text-sm font-semibold text-gray-700">Water Level:</p>
+            <p class="text-lg">{{ warning.water_level_current }} meters</p>
+            <p class="text-sm text-gray-600">Trend: {{ warning.water_level_trend }}</p>
+        </div>
+
+        <div class="mt-4">
+            <p class="text-sm font-semibold text-gray-700">Rainfall:</p>
+            <p class="text-lg">{{ warning.rainfall_latest_1hr }} mm (1hr)</p>
+            <p class="text-sm text-gray-600">Total Today: {{ warning.rainfall_total_today }} mm</p>
+        </div>
+
+        <div class="mt-4">
+            <p class="text-sm font-semibold text-gray-700">Status:</p>
+            <p class="text-lg text-{{ getStatusColor(warning.water_level_status) }}">{{ warning.water_level_status }}
+            </p>
+            <p class="text-lg text-{{ getStatusColor(warning.rainfall_status) }}">{{ warning.rainfall_status }}</p>
+        </div>
+
+    </div>
+</div>

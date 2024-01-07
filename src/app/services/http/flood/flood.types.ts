@@ -1,0 +1,35 @@
+export interface IFloodWarning {
+    station_id: string;
+    station_name: string;
+    latitude: number;
+    longitude: number;
+    district: string;
+    state: string;
+    sub_basin: string;
+    main_basin: string;
+    station_type: string;
+    water_level_current: number;
+    water_level_indicator: string;
+    water_level_normal_level: number;
+    water_level_alert_level: number;
+    water_level_warning_level: number;
+    water_level_danger_level: number;
+    water_level_increment: number;
+    water_level_update_datetime: string;
+    water_level_update_date: string;
+    water_level_trend: string;
+    rainfall_clean: number;
+    rainfall_latest_1hr: number;
+    rainfall_total_today: number;
+    rainfall_indicator: string;
+    rainfall_update_datetime: string;
+    rainfall_update_date: string;
+    water_level_display: string;
+    rainfall_display: string;
+    raw_water_level: number;
+    raw_rainfall: number;
+    station_status: string;
+    station_code: string;
+    water_level_status: string;
+    rainfall_status: string;
+}
