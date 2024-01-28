@@ -58,7 +58,7 @@ def get_flood_warnings_count_groupby_state():
 
 
 @app.on_event("startup")
-@repeat_every(seconds=5)  # CRON job runs every hour, adjust as needed
+@repeat_every(seconds=30)  # CRON job runs every hour, adjust as needed
 def scheduled_flood_warning_get_api():
     data = perform_flood_warning_get_api()
     insert_to_database(data)
