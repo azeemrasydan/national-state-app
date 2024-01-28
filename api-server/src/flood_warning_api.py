@@ -1,12 +1,13 @@
-from fastapi import FastAPI
-from fastapi_utils.tasks import repeat_every
-from src.flood_warning_api import insert_to_database, perform_flood_warning_get_api
-
-app = FastAPI()
+def insert_to_database(data):
+    ## Please complete this
+    print("Inserting the data: " + str(data) )
 
 
-@app.get("/flood-warnings")
-def get_flood_warnings():
+def perform_flood_warning_get_api():
+    ## Please complete this and replace below return with actual fetch
+    print("Performing fetching flood warning api")
+
+
     return [
         {
             "station_id": "3533102_CPKN0003",
@@ -44,21 +45,3 @@ def get_flood_warnings():
             "rainfall_status": "ON",
         }
     ]
-
-
-
-@app.get("/flood-warnings/count/group-by/state")
-def get_flood_warnings_count_groupby_state():
-    return [
-        {
-            "state": "Selangor",
-            "count": 20
-        }
-    ]
-
-
-@app.on_event("startup")
-@repeat_every(seconds=5)  # CRON job runs every hour, adjust as needed
-def scheduled_flood_warning_get_api():
-    data = perform_flood_warning_get_api()
-    insert_to_database(data)
