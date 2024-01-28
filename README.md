@@ -7,5 +7,5 @@
 ## API server
 1. Create API server that allows browser from localhost:4200 to access (CORS)
 2. API expectation
-i. GET /flood-warnings?state={state}&district={district}
-ii. GET /flood-warnings/count/group-by?water_level_indicator=DANGER
+   1. GET /flood-warnings?state={state}&district={district}
+   2. GET /flood-warnings/count/group-by?water_level_indicator=DANGER
